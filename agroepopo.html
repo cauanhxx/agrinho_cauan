@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrofields - Cultivamos o Melhor Alimento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos personalizados que complementam o Tailwind CSS */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Cor de fundo suave */
+        }
+        .hero-section {
+            background-image: url('https://placehold.co/1920x600/a0c49d/ffffff?text=Fundo+Agrofields'); /* Imagem de fundo placeholder */
+            background-size: cover;
+            background-position: center;
+            height: 600px; /* Altura fixa para a seção hero */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3); /* Overlay escuro para melhor contraste do texto */
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #4CAF50; /* Verde mais escuro no hover */
+        }
+        .feature-card {
+            background-color: white;
+            border-radius: 0.75rem; /* Bordas arredondadas */
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%; /* Garante que os cards tenham altura igual */
+        }
+        .feature-card.gmo-free { background-color: #fce38a; } /* Amarelo */
+        .feature-card.premium { background-color: #f5a623; } /* Laranja */
+        .feature-card.organic { background-color: #a0c49d; } /* Verde claro */
+        .feature-card.best-price { background-color: #79d1c3; } /* Azul esverdeado */
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        .feature-card p {
+            font-size: 1rem;
+            color: #555;
+            flex-grow: 1; /* Permite que o parágrafo ocupe o espaço restante */
+            margin-bottom: 1rem;
+        }
+        .feature-card button {
+            background-color: #333; /* Botão escuro */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .feature-card button:hover {
+            background-color: #555; /* Escurece no hover */
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 400px; /* Altura menor para mobile */
+            }
+            .hero-section h1 {
+                font-size: 2.5rem; /* Ajusta o tamanho da fonte */
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+            .feature-cards-grid {
+                grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+            }
+            .feature-card {
+                margin-bottom: 1rem; /* Espaçamento entre os cards em mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-white shadow-md py-4">
+        <nav class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+            <div class="text-2xl font-bold text-green-700 mb-4 md:mb-0">
+                <span class="text-green-500">AGROFIELDS</span>
+            </div>
+            <ul class="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-8">
+                <li><a href="#" class="nav-link text-gray-700 hover:text-green-600 font-medium">HOME</a></li>
+                <li><a href="#" class="nav-link text-gray-700 hover:text-green-600 font-medium">PRODUCTS</a></li>
+                <li><a href="#" class="nav-link text-gray-700 hover:text-green-600 font-medium">ABOUT</a></li>
+                <li><a href="#" class="nav-link text-gray-700 hover:text-green-600 font-medium">SHOP ACCESS</a></li>
+                <li><a href="#" class="nav-link text-gray-700 hover:text-green-600 font-medium">BLOG TYPE</a></li>
+                <li><a href="#" class="nav-link text-gray-700 hover:text-green-600 font-medium">CONTACTS</a></li>
+            </ul>
+            <div class="flex space-x-4 ml-0 md:ml-8 mt-4 md:mt-0">
+                <a href="#" class="text-gray-700 hover:text-green-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                </a>
+                <a href="#" class="text-gray-700 hover:text-green-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 0a2 2 0 100 4 2 2 0 000-4z"></path></svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section relative">
+        <div class="hero-overlay"></div>
+        <div class="relative z-10 p-4">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight">We Grow Best Food</h1>
+            <p class="text-2xl md:text-3xl font-light">Organic & Clean</p>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-12 -mt-24 relative z-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 feature-cards-grid">
+            <div class="feature-card gmo-free">
+                <div>
+                    <h3>GMO-free</h3>
+                    <p class="text-sm">Guaranteed</p>
+                </div>
+                <button>Read More</button>
+            </div>
+
+            <div class="feature-card premium">
+                <div>
+                    <h3>Premium</h3>
+                    <p class="text-sm">Quality</p>
+                </div>
+                <button>Read More</button>
+            </div>
+
+            <div class="feature-card organic">
+                <div>
+                    <h3>Organic</h3>
+                    <p class="text-sm">100% Healthy</p>
+                </div>
+                <button>Read More</button>
+            </div>
+
+            <div class="feature-card best-price">
+                <div>
+                    <h3>Best Price</h3>
+                    <p class="text-sm">Always</p>
+                </div>
+                <button>Read More</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Agrofields. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
